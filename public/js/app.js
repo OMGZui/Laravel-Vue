@@ -47128,14 +47128,71 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             message: 'Hello Vue!',
+            message_0: 'Hello Vue!',
             message_1: 'Hello Vue!',
             message_2: '页面加载于 ' + new Date().toLocaleString(),
-            message_3: '',
+            message_3: 'Hello Vue!',
+            message_4: 'Hello Vue!',
             seen: true,
             todos: [{
                 text: '学习 JavaScript'
@@ -47143,7 +47200,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 text: '学习 Vue'
             }, {
                 text: '整个牛项目'
-            }]
+            }],
+            isBtn: true,
+            isText: false,
+            textObj: {
+                'text-danger': true,
+                'btn-info': false
+            },
+            aObj: {
+                fontSize: '24px',
+                color: 'red'
+            },
+            type: 'F',
+            borderObj: {
+                border: '1px solid pink',
+                margin: '0 0 20px 0'
+            },
+            items: [{
+                message: 'Foo'
+            }, {
+                message: 'Bar'
+            }],
+            object: {
+                firstName: 'John',
+                lastName: 'Doe',
+                age: 30
+            },
+            counter: 1
         };
     },
     mounted: function mounted() {
@@ -47152,7 +47235,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         reverseMessage: function reverseMessage() {
-            this.message = this.message.split('').reverse().join('');
+            this.message_0 = this.message_0.split('').reverse().join('');
+        },
+        reverseMessageFunc: function reverseMessageFunc() {
+            return this.message_4.split('').reverse().join('');
+        },
+        counterNum: function counterNum() {
+            return this.counter += 1;
+        }
+    },
+    computed: {
+        reverseMessageComputed: function reverseMessageComputed() {
+            return this.message_4.split('').reverse().join('');
         }
     }
 });
@@ -47166,7 +47260,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row", style: _vm.borderObj }, [
       _c("div", { staticClass: "col-md-4" }, [
         _c("div", { staticClass: "panel panel-info" }, [
           _vm._m(0),
@@ -47215,14 +47309,14 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row", style: _vm.borderObj }, [
       _c("div", { staticClass: "col-md-4" }, [
         _c("div", { staticClass: "panel panel-info" }, [
           _vm._m(3),
           _vm._v(" "),
           _c("div", { staticClass: "panel-body" }, [
             _c("p", { staticClass: "text-danger" }, [
-              _vm._v(_vm._s(_vm.message))
+              _vm._v(_vm._s(_vm.message_0))
             ]),
             _vm._v(" "),
             _c(
@@ -47264,9 +47358,143 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(4),
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "panel panel-info" }, [
+          _vm._m(4),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c("p", { staticClass: "text-info" }, [
+              _vm._v(" 元数据：" + _vm._s(_vm.message_4) + " ")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-danger" }, [
+              _vm._v(" 计算属性：" + _vm._s(_vm.reverseMessageComputed) + " ")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-danger" }, [
+              _vm._v(" 方法：" + _vm._s(_vm.reverseMessageFunc()) + " ")
+            ])
+          ])
+        ])
+      ]),
       _vm._v(" "),
-      _vm._m(5)
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "panel panel-info" }, [
+          _vm._m(5),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c(
+              "a",
+              {
+                staticClass: "btn",
+                class: { "btn-info": _vm.isBtn, "text-danger": _vm.isText }
+              },
+              [_vm._v(" " + _vm._s(_vm.message) + " ")]
+            ),
+            _vm._v(" "),
+            _c("a", { staticClass: "text", class: _vm.textObj }, [
+              _vm._v(" " + _vm._s(_vm.message) + " ")
+            ]),
+            _vm._v(" "),
+            _c("a", { staticClass: "text", style: _vm.aObj }, [
+              _vm._v(" " + _vm._s(_vm.message) + " ")
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row", style: _vm.borderObj }, [
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "panel panel-info" }, [
+          _vm._m(6),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _vm.type === "A"
+              ? _c("div", [
+                  _vm._v("\n                        A\n                    ")
+                ])
+              : _vm.type === "B"
+                ? _c("div", [
+                    _vm._v("\n                        B\n                    ")
+                  ])
+                : _vm.type === "C"
+                  ? _c("div", [
+                      _vm._v(
+                        "\n                        C\n                    "
+                      )
+                    ])
+                  : _c("div", [
+                      _vm._v(
+                        "\n                        Not A/B/C\n                    "
+                      )
+                    ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "panel panel-info" }, [
+          _vm._m(7),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "panel-body" },
+            [
+              _c("h5", [_vm._v("数组列表")]),
+              _vm._v(" "),
+              _vm._l(_vm.items, function(item, index) {
+                return _c("li", { key: item.id, staticClass: "list-group" }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(index) +
+                      "=>" +
+                      _vm._s(item.message) +
+                      "\n                    "
+                  )
+                ])
+              }),
+              _vm._v(" "),
+              _c("h5", [_vm._v("对象列表")]),
+              _vm._v(" "),
+              _vm._l(_vm.object, function(item, index, key) {
+                return _c("li", { key: item.id, staticClass: "list-group" }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(key) +
+                      "=>" +
+                      _vm._s(index) +
+                      "=>" +
+                      _vm._s(item) +
+                      "\n                    "
+                  )
+                ])
+              })
+            ],
+            2
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("div", { staticClass: "panel panel-info" }, [
+          _vm._m(8),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c(
+              "button",
+              { staticClass: "btn btn-info", on: { click: _vm.counterNum } },
+              [_vm._v("Add 1")]
+            ),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v("The button above has been clicked "),
+              _c("strong", [_vm._v(_vm._s(_vm.counter))]),
+              _vm._v(" times.")
+            ])
+          ])
+        ])
+      ])
     ])
   ])
 }
@@ -47307,28 +47535,40 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-4" }, [
-      _c("div", { staticClass: "panel panel-info" }, [
-        _c("div", { staticClass: "panel-heading" }, [
-          _c("h4", [_vm._v("条件与循环")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "panel-body" })
-      ])
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("h4", [_vm._v("计算属性")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-4" }, [
-      _c("div", { staticClass: "panel panel-info" }, [
-        _c("div", { staticClass: "panel-heading" }, [
-          _c("h4", [_vm._v("声明式渲染")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "panel-body" })
-      ])
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("h4", [_vm._v("Class 与 Style 绑定")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("h4", [_vm._v("条件渲染")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("h4", [_vm._v("列表渲染")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("h4", [_vm._v("事件处理")])
     ])
   }
 ]
