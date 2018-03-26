@@ -125,7 +125,35 @@
                     </div>
                     <div class="panel-body">
                         <button class="btn btn-info" @click="counterNum">Add 1</button>
-                        <p>The button above has been clicked <strong>{{ counter }}</strong> times.</p>
+                        <p>The button above has been clicked
+                            <strong>{{ counter }}</strong> times.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" :style="borderObj">
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>表单输入绑定</h4>
+                    </div>
+                    <div class="panel-body">
+                        <input class="form-control" v-model="message_5" placeholder="edit me">
+                        <p>Message is: {{ message_5 }}</p>
+                        <br>
+
+                        <input type="radio" class="radio-inline" id="male" value="男" v-model="picked">
+                        <label for="male">男</label>
+                        <input type="radio" class="radio-inline" id="female" value="女" v-model="picked">
+                        <label for="female">女</label>
+                        <span class="text-danger">Picked: {{ picked }}</span>
+
+                        <select v-model="selected" class="custom-select-sm">
+                            <option v-for="option in options" v-bind:value="option.value" :key="option.item">
+                                {{ option.text }}
+                            </option>
+                        </select>
+                        <span class="text-danger">Selected: {{ selected }}</span>
                     </div>
                 </div>
             </div>
@@ -143,6 +171,7 @@
                 message_2: '页面加载于 ' + new Date().toLocaleString(),
                 message_3: 'Hello Vue!',
                 message_4: 'Hello Vue!',
+                message_5: 'Hello Vue!',
                 seen: true,
                 todos: [{
                         text: '学习 JavaScript'
@@ -182,6 +211,21 @@
                     age: 30
                 },
                 counter: 1,
+                picked: '男',
+                selected: 'A',
+                options: [{
+                        text: 'One',
+                        value: 'A'
+                    },
+                    {
+                        text: 'Two',
+                        value: 'B'
+                    },
+                    {
+                        text: 'Three',
+                        value: 'C'
+                    }
+                ]
             }
         },
         mounted() {
@@ -195,7 +239,7 @@
                 return this.message_4.split('').reverse().join('')
             },
             counterNum() {
-                return this.counter+=1
+                return this.counter += 1
             }
         },
         computed: {

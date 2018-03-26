@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="app">
-        <vue-component></vue-component>
+        <parent></parent>
     </div>
 </body>
 <script type="text/javascript">
