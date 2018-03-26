@@ -1,3 +1,3 @@
 language: php
-before_install: yarn run prod
+before_install: yarn add -g cross-env && yarn run prod
 script: true
