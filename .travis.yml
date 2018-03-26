@@ -1,5 +1,3 @@
 language: php
-before_install:
-  - yarn add -g cross-env
-  - yarn run prod
+php: 7.1.11
 script: true
