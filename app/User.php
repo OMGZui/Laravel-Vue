@@ -26,4 +26,30 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * 登录
+     *
+     * @param $input
+     * @return bool
+     */
+    public function login($input)
+    {
+        $rs = $this->newQuery()->where('email', $input['email'])
+            ->where('password', md5($input['password']))->first();
+        return $rs ? true : false;
+    }
+
+    /**
+     * 注册
+     *
+     * @param $input
+     * @return $this|\Illuminate\Database\Eloquent\Model
+     */
+    public function register($input)
+    {
+        $input['password'] = md5($input['password']);
+        $rs = $this->newQuery()->create($input);
+        return $rs;
+    }
 }
